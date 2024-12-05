@@ -463,7 +463,7 @@ def periodic_table_quiz():
 def amendments_quiz():
     # Simple format for questions
     questions = {
-    1: "Freedom of speech, religion, press, assembly, and petition (1791) ------------------------------------------------------------------------------------------ James Madison - Most impacted: All U.S. citizens, especially activists and minorities.,
+    1: "Freedom of speech, religion, press, assembly, and petition (1791) ------------------------------------------------------------------------------------------ James Madison - Most impacted: All U.S. citizens, especially activists and minorities.",
     2: "Right to keep and bear arms (1791) ------------------------------------------------------------------------------------------------ James Madison - Most impacted: Gun owners and advocates for self-defense.",
     3: "No quartering of soldiers in private homes without consent (1791) ------------------------------------------------------------------------------------------------- James Madison - Most impacted: Private homeowners.",
     4: "Protection against unreasonable searches and seizures (1791) ------------------------------------------------------------------------------------------------- James Madison - Most impacted: Individuals involved in legal or criminal justice matters.",

@@ -462,7 +462,7 @@ def periodic_table_quiz():
 #amendments-quiz 
 def amendments_quiz():
     # Simple format for questions
-    questions = {
+questions = {
     1: "Freedom of speech, religion, press, assembly, and petition (1791) ------------------------------------------------------------------------------------------ James Madison - Most impacted: All U.S. citizens, especially activists and minorities.",
     2: "Right to keep and bear arms (1791) ------------------------------------------------------------------------------------------------ James Madison - Most impacted: Gun owners and advocates for self-defense.",
     3: "No quartering of soldiers in private homes without consent (1791) ------------------------------------------------------------------------------------------------- James Madison - Most impacted: Private homeowners.",
@@ -492,7 +492,7 @@ def amendments_quiz():
     27: "Delays laws affecting Congressional salary from taking effect until after the next election of representatives (1992) - Gregory Watson - Most impacted: Members of Congress and taxpayers."
 }
 
-    }
+    
 
     # Detailed answers
     answers = {

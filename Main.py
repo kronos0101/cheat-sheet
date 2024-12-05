@@ -400,27 +400,109 @@ def math_quiz():
 def periodic_table_quiz():
     # Dictionary of elements with their symbols as keys and names as values
     elements = { 
-        "H": "Hydrogen (1)", "He": "Helium (2)", "Li": "Lithium (3)", "Be": "Beryllium (4)", "B": "Boron (5)",
-        "C": "Carbon (6)", "N": "Nitrogen (7)", "O": "Oxygen (8)", "F": "Fluorine (9)", "Ne": "Neon (10)",
-        "Na": "Sodium (11)", "Mg": "Magnesium (12)", "Al": "Aluminum (13)", "Si": "Silicon (14)", "P": "Phosphorus (15)",
-        "S": "Sulfur (16)", "Cl": "Chlorine (17)", "Ar": "Argon (18)", "K": "Potassium (19)", "Ca": "Calcium (20)",
-        "Sc": "Scandium (21)", "Ti": "Titanium (22)", "V": "Vanadium (23)", "Cr": "Chromium (24)", "Mn": "Manganese (25)",
-        "Fe": "Iron (26)", "Co": "Cobalt (27)", "Ni": "Nickel (28)", "Cu": "Copper (29)", "Zn": "Zinc (30)",
-        "Ga": "Gallium (31)", "Ge": "Germanium (32)", "As": "Arsenic (33)", "Se": "Selenium (34)", "Br": "Bromine (35)",
-        "Kr": "Krypton (36)", "Rb": "Rubidium (37)", "Sr": "Strontium (38)", "Y": "Yttrium (39)", "Zr": "Zirconium (40)",
-        "Nb": "Niobium (41)", "Mo": "Molybdenum (42)", "Tc": "Technetium (43)", "Ru": "Ruthenium (44)", "Rh": "Rhodium (45)",
-        "Pd": "Palladium (46)", "Ag": "Silver (47)", "Cd": "Cadmium (48)", "In": "Indium (49)", "Sn": "Tin (50)",
-        "Sb": "Antimony (51)", "Te": "Tellurium (52)", "I": "Iodine (53)", "Xe": "Xenon (54)", "Cs": "Cesium (55)",
-        "Ba": "Barium (56)", "La": "Lanthanum (57)", "Ce": "Cerium (58)", "Pr": "Praseodymium (59)", "Nd": "Neodymium (60)",
-        "Pm": "Promethium (61)", "Sm": "Samarium (62)", "Eu": "Europium (63)", "Gd": "Gadolinium (64)", "Tb": "Terbium (65)",
-        "Dy": "Dysprosium (66)", "Ho": "Holmium (67)", "Er": "Erbium (68)", "Tm": "Thulium (69)", "Yb": "Ytterbium (70)",
-        "Lu": "Lutetium (71)", "Hf": "Hafnium (72)", "Ta": "Tantalum (73)", "W": "Tungsten (74)", "Re": "Rhenium (75)",
-        "Os": "Osmium (76)", "Ir": "Iridium (77)", "Pt": "Platinum (78)", "Au": "Gold (79)", "Hg": "Mercury (80)",
-        "Tl": "Thallium (81)", "Pb": "Lead (82)", "Bi": "Bismuth (83)", "Po": "Polonium (84)", "At": "Astatine (85)",
-        "Rn": "Radon (86)", "Fr": "Francium (87)", "Ra": "Radium (88)", "Ac": "Actinium (89)", "Th": "Thorium (90)",
-        "Pa": "Protactinium (91)", "U": "Uranium (92)", "Np": "Neptunium (93)", "Pu": "Plutonium (94)", "Am": "Americium (95)",
-        "Cm": "Curium (96)", "Bk": "Berkelium (97)", "Cf": "Californium (98)", "Es": "Einsteinium (99)", "Fm": "Fermium (100)",
-        "Md": "Mendelevium (101)", "No": "Nobelium (102)", "Lr": "Lawrencium (103)", "Rf": "Rutherfordium (104)", 
+    "H": "Hydrogen (1) - Example: Hydrogen chloride",
+    "He": "Helium (2) - Example: Helium fluoride",
+    "Li": "Lithium (3) - Example: Lithium bromide",
+    "Be": "Beryllium (4) - Example: Beryllium oxide",
+    "B": "Boron (5) - Example: Boron trifluoride",
+    "C": "Carbon (6) - Example: Carbon dioxide",
+    "N": "Nitrogen (7) - Example: Ammonia",
+    "O": "Oxygen (8) - Example: Water",
+    "F": "Fluorine (9) - Example: Hydrogen fluoride",
+    "Ne": "Neon (10) - Example: Neon chloride",
+    "Na": "Sodium (11) - Example: Sodium chloride",
+    "Mg": "Magnesium (12) - Example: Magnesium sulfate",
+    "Al": "Aluminum (13) - Example: Aluminum oxide",
+    "Si": "Silicon (14) - Example: Silicon dioxide",
+    "P": "Phosphorus (15) - Example: Phosphorus pentachloride",
+    "S": "Sulfur (16) - Example: Sulfuric acid",
+    "Cl": "Chlorine (17) - Example: Hydrogen chloride",
+    "Ar": "Argon (18) - Example: Argon hydride",
+    "K": "Potassium (19) - Example: Potassium nitrate",
+    "Ca": "Calcium (20) - Example: Calcium carbonate",
+    "Sc": "Scandium (21) - Example: Scandium oxide",
+    "Ti": "Titanium (22) - Example: Titanium tetrachloride",
+    "V": "Vanadium (23) - Example: Vanadium pentoxide",
+    "Cr": "Chromium (24) - Example: Chromium chloride",
+    "Mn": "Manganese (25) - Example: Potassium permanganate",
+    "Fe": "Iron (26) - Example: Iron oxide",
+    "Co": "Cobalt (27) - Example: Cobalt chloride",
+    "Ni": "Nickel (28) - Example: Nickel sulfate",
+    "Cu": "Copper (29) - Example: Copper chloride",
+    "Zn": "Zinc (30) - Example: Zinc oxide",
+    "Ga": "Gallium (31) - Example: Gallium arsenide",
+    "Ge": "Germanium (32) - Example: Germanium dioxide",
+    "As": "Arsenic (33) - Example: Arsenic pentafluoride",
+    "Se": "Selenium (34) - Example: Selenium dioxide",
+    "Br": "Bromine (35) - Example: Hydrogen bromide",
+    "Kr": "Krypton (36) - Example: Krypton fluoride",
+    "Rb": "Rubidium (37) - Example: Rubidium chloride",
+    "Sr": "Strontium (38) - Example: Strontium nitrate",
+    "Y": "Yttrium (39) - Example: Yttrium oxide",
+    "Zr": "Zirconium (40) - Example: Zirconium tetrachloride",
+    "Nb": "Niobium (41) - Example: Niobium pentachloride",
+    "Mo": "Molybdenum (42) - Example: Molybdenum trioxide",
+    "Tc": "Technetium (43) - Example: Technetium oxide",
+    "Ru": "Ruthenium (44) - Example: Ruthenium tetroxide",
+    "Rh": "Rhodium (45) - Example: Rhodium chloride",
+    "Pd": "Palladium (46) - Example: Palladium chloride",
+    "Ag": "Silver (47) - Example: Silver nitrate",
+    "Cd": "Cadmium (48) - Example: Cadmium sulfide",
+    "In": "Indium (49) - Example: Indium bromide",
+    "Sn": "Tin (50) - Example: Tin chloride",
+    "Sb": "Antimony (51) - Example: Antimony pentachloride",
+    "Te": "Tellurium (52) - Example: Tellurium dioxide",
+    "I": "Iodine (53) - Example: Hydrogen iodide",
+    "Xe": "Xenon (54) - Example: Xenon hexafluoride",
+    "Cs": "Cesium (55) - Example: Cesium iodide",
+    "Ba": "Barium (56) - Example: Barium sulfate",
+    "La": "Lanthanum (57) - Example: Lanthanum chloride",
+    "Ce": "Cerium (58) - Example: Cerium oxide",
+    "Pr": "Praseodymium (59) - Example: Praseodymium chloride",
+    "Nd": "Neodymium (60) - Example: Neodymium oxide",
+    "Pm": "Promethium (61) - Example: Promethium oxide",
+    "Sm": "Samarium (62) - Example: Samarium fluoride",
+    "Eu": "Europium (63) - Example: Europium oxide",
+    "Gd": "Gadolinium (64) - Example: Gadolinium chloride",
+    "Tb": "Terbium (65) - Example: Terbium fluoride",
+    "Dy": "Dysprosium (66) - Example: Dysprosium chloride",
+    "Ho": "Holmium (67) - Example: Holmium oxide",
+    "Er": "Erbium (68) - Example: Erbium oxide",
+    "Tm": "Thulium (69) - Example: Thulium bromide",
+    "Yb": "Ytterbium (70) - Example: Ytterbium chloride",
+    "Lu": "Lutetium (71) - Example: Lutetium oxide",
+    "Hf": "Hafnium (72) - Example: Hafnium chloride",
+    "Ta": "Tantalum (73) - Example: Tantalum pentoxide",
+    "W": "Tungsten (74) - Example: Tungsten trioxide",
+    "Re": "Rhenium (75) - Example: Rhenium oxide",
+    "Os": "Osmium (76) - Example: Osmium tetroxide",
+    "Ir": "Iridium (77) - Example: Iridium chloride",
+    "Pt": "Platinum (78) - Example: Platinum chloride",
+    "Au": "Gold (79) - Example: Gold chloride",
+    "Hg": "Mercury (80) - Example: Mercury chloride",
+    "Tl": "Thallium (81) - Example: Thallium sulfate",
+    "Pb": "Lead (82) - Example: Lead nitrate",
+    "Bi": "Bismuth (83) - Example: Bismuth chloride",
+    "Po": "Polonium (84) - Example: Polonium chloride",
+    "At": "Astatine (85) - Example: Astatine hydride",
+    "Rn": "Radon (86) - Example: Radon fluoride",
+    "Fr": "Francium (87) - Example: Francium chloride",
+    "Ra": "Radium (88) - Example: Radium bromide",
+    "Ac": "Actinium (89) - Example: Actinium fluoride",
+    "Th": "Thorium (90) - Example: Thorium oxide",
+    "Pa": "Protactinium (91) - Example: Protactinium fluoride",
+    "U": "Uranium (92) - Example: Uranium hexafluoride",
+    "Np": "Neptunium (93) - Example: Neptunium fluoride",
+    "Pu": "Plutonium (94) - Example: Plutonium oxide",
+    "Am": "Americium (95) - Example: Americium oxide",
+    "Cm": "Curium (96) - Example: Curium chloride",
+    "Bk": "Berkelium (97) - Example: Berkelium chloride",
+    "Cf": "Californium (98) - Example: Californium chloride",
+    "Es": "Einsteinium (99) - Example: Einsteinium oxide",
+    "Fm": "Fermium (100) - Example: Fermium chloride",
+    "Md": "Mendelevium (101) - Example: Mendelevium chloride",
+    "No": "Nobelium (102) - Example: Nobelium bromide",
+    "Lr": "Lawrencium (103) - Example: Lawrencium oxide", "Rf": "Rutherfordium (104)", 
         "Db": "Dubnium (105)", "Sg": "Seaborgium (106)", "Bh": "Bohrium (107)", "Hs": "Hassium (108)", "Mt": "Meitnerium (109)",
         "Ds": "Darmstadtium (110)", "Rg": "Roentgenium (111)", "Cn": "Copernicium (112)", "Nh": "Nihonium (113)",
         "Fl": "Flerovium (114)", "Mc": "Moscovium (115)", "Lv": "Livermorium (116)", "Ts": "Tennessine (117)", "Og": "Oganesson (118)"
@@ -460,39 +542,45 @@ def periodic_table_quiz():
     print(f"\nGame over! You answered {correct} questions correctly before getting 10 wrong.")
 
 #amendments-quiz 
+    
 def amendments_quiz():
-    # Simple format for questions
-questions = {
-    1: "Freedom of speech, religion, press, assembly, and petition (1791) ------------------------------------------------------------------------------------------ James Madison - Most impacted: All U.S. citizens, especially activists and minorities.",
-    2: "Right to keep and bear arms (1791) ------------------------------------------------------------------------------------------------ James Madison - Most impacted: Gun owners and advocates for self-defense.",
-    3: "No quartering of soldiers in private homes without consent (1791) ------------------------------------------------------------------------------------------------- James Madison - Most impacted: Private homeowners.",
-    4: "Protection against unreasonable searches and seizures (1791) ------------------------------------------------------------------------------------------------- James Madison - Most impacted: Individuals involved in legal or criminal justice matters.",
-    5: "Protection against self-incrimination, double jeopardy; guarantees due process (1791) ------------------------------------------------------------------------------------------------- James Madison - Most impacted: Defendants in criminal cases.",
-    6: "Right to a speedy and public trial by an impartial jury (1791) ------------------------------------------------------------------------------------------------- James Madison - Most impacted: Defendants in criminal trials.",
-    7: "Right to trial by jury in civil cases (1791) - ------------------------------------------------------------------------------------------------James Madison - Most impacted: Civil litigants seeking justice.",
-    8: "Protection against cruel and unusual punishment (1791) ------------------------------------------------------------------------------------------------- James Madison - Most impacted: Criminal defendants and prisoners.",
-    9: "Rights retained by the people, even if not specifically enumerated in the Constitution (1791) ------------------------------------------------------------------------------------------------- James Madison - Most impacted: Individuals advocating for unenumerated rights.",
-    10: "Powers not delegated to the federal government are reserved to the states or the people (1791) - ------------------------------------------------------------------------------------------------James Madison - Most impacted: State governments and individual citizens.",
-    11: "Limits lawsuits against states (1795) ------------------------------------------------------------------------------------------------- Alexander Hamilton - Most impacted: Individuals filing lawsuits against state governments.",
-    12: "Revises presidential election procedures (1804) ------------------------------------------------------------------------------------------------- Thomas Jefferson - Most impacted: Presidential and vice-presidential candidates, as well as voters.",
-    13: "Abolition of slavery (1865)------------------------------------------------------------------------------------------------ - Abraham Lincoln - Most impacted: Enslaved African Americans.",
-    14: "Equal protection under the law and due process for all citizens (1868) ------------------------------------------------------------------------------------------------- John Bingham - Most impacted: Former slaves, minorities, and marginalized groups.",
-    15: "Right to vote cannot be denied based on race, color, or previous servitude (1870) ------------------------------------------------------------------------------------------------- Frederick Douglass - Most impacted: African American men and other racial minorities.",
-    16: "Congress can levy an income tax (1913) ------------------------------------------------------------------------------------------------- William Howard Taft - Most impacted: Taxpayers and the working population.",
-    17: "Establishes the direct election of U.S. Senators by popular vote (1913) - William Jennings Bryan - Most impacted: Voters, particularly those advocating for democratic reforms.",
-    18: "Prohibition of alcohol (1919, repealed by the 21st Amendment in 1933) - Wayne Wheeler - Most impacted: Alcohol consumers, producers, and law enforcement.",
-    19: "Women's right to vote (1920) - Susan B. Anthony - Most impacted: Women and gender equality advocates.",
-    20: "Changes the dates of congressional and presidential terms (1933) - George Norris - Most impacted: Elected officials and voters.",
-    21: "Repeal of Prohibition (18th Amendment) (1933) - John J. Blaine - Most impacted: Alcohol consumers, producers, and businesses.",
-    22: "Limits the President to two terms in office (1951) - Franklin D. Roosevelt (indirectly influenced) - Most impacted: Presidents and political parties.",
-    23: "Gives residents of Washington D.C. the right to vote for representatives in the Electoral College (1961) - Estes Kefauver - Most impacted: Residents of Washington, D.C.",
-    24: "Abolishes poll taxes (1964) - Lyndon B. Johnson - Most impacted: Low-income and minority voters.",
-    25: "Addresses presidential succession and disability (1967) - Birch Bayh - Most impacted: Presidents, vice presidents, and the executive branch.",
-    26: "Voting age lowered to 18 (1971) - Jennings Randolph - Most impacted: Young adults aged 18-20.",
-    27: "Delays laws affecting Congressional salary from taking effect until after the next election of representatives (1992) - Gregory Watson - Most impacted: Members of Congress and taxpayers."
-}
 
     
+    # Simple format for questions
+   
+    import random
+
+def amendments_quiz():
+    # Simple format for questions
+    questions = {
+        1: "Freedom of speech, religion, press, assembly, and petition (1791)",
+        2: "Right to keep and bear arms (1791)",
+        3: "No quartering of soldiers in private homes without consent (1791)",
+        4: "Protection against unreasonable searches and seizures (1791)",
+        5: "Protection against self-incrimination, double jeopardy; guarantees due process (1791)",
+        6: "Right to a speedy and public trial by an impartial jury (1791)",
+        7: "Right to trial by jury in civil cases (1791)",
+        8: "Protection against cruel and unusual punishment (1791)",
+        9: "Rights retained by the people, even if not specifically enumerated in the Constitution (1791)",
+        10: "Powers not delegated to the federal government are reserved to the states or the people (1791)",
+        11: "Limits lawsuits against states (1795)",
+        12: "Revises presidential election procedures (1804)",
+        13: "Abolition of slavery (1865)",
+        14: "Equal protection under the law and due process for all citizens (1868)",
+        15: "Right to vote cannot be denied based on race, color, or previous servitude (1870)",
+        16: "Congress can levy an income tax (1913)",
+        17: "Establishes the direct election of U.S. Senators by popular vote (1913)",
+        18: "Prohibition of alcohol (1919, repealed by the 21st Amendment in 1933)",
+        19: "Women's right to vote (1920)",
+        20: "Changes the dates of congressional and presidential terms (1933)",
+        21: "Repeal of Prohibition (18th Amendment) (1933)",
+        22: "Limits the President to two terms in office (1951)",
+        23: "Gives residents of Washington D.C. the right to vote for representatives in the Electoral College (1961)",
+        24: "Abolishes poll taxes (1964)",
+        25: "Addresses presidential succession and disability (1967)",
+        26: "Voting age lowered to 18 (1971)",
+        27: "Delays laws affecting Congressional salary from taking effect until after the next election of representatives (1992)"
+    }
 
     # Detailed answers
     answers = {
@@ -528,6 +616,7 @@ questions = {
     score = 0
     print("\nWelcome to the Amendments Quiz!")
     print("You will be given 10 descriptions of amendments. Your task is to enter the amendment number that matches the description.\n")
+    
     for _ in range(10):  # Ask 10 random questions
         amendment, description = random.choice(list(questions.items()))
         try:
@@ -540,6 +629,7 @@ questions = {
                 print(f"Details: {answers[amendment]}")
         except ValueError:
             print("Invalid input! Please enter a number.")
+
     print(f"\nYour final score: {score}/10")
     if score == 10:
         print("Excellent! You know your amendments well!")
@@ -571,7 +661,7 @@ def states_capitals_quiz():
     score = 0
     print("\nWelcome to the States and Capitals Quiz!")
     print("You will be given 5 questions. Try to match states with their capitals or vice versa.\n")
-    for _ in range(10):  # Ask 10 random questions
+    for _ in range(10):  # Ask 25 random questions
         if random.choice([True, False]):
             # Ask for the capital of a state
             state, capital = random.choice(list(states_and_capitals.items()))
@@ -590,10 +680,10 @@ def states_capitals_quiz():
                 score += 1
             else:
                 print(f"Wrong! {capital} is the capital of {state}.")
-    print(f"\nYour final score: {score}/10")
-    if score == 5:
+    print(f"\nYour final score: {score}/25")
+    if score == 25:
         print("Excellent! You know your states and capitals!")
-    elif score >= 3:
+    elif score >= 18:
         print("Good job! A little more practice and you'll master it.")
     else:
         print("Keep practicing! You'll get there.")
